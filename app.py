@@ -247,20 +247,19 @@ with st.sidebar:
     st.header("⚙️ Configuration")
     
     with st.expander("🔑 Clé API Mistral", expanded=False):
-    # Auto-use secret from Streamlit Cloud
-    if "MISTRAL_API_KEY" in st.secrets:
-        api_key = st.secrets["MISTRAL_API_KEY"]
-        st.success("✅ Clé API configurée automatiquement")
-    else:
-        # Fallback for local development
-        api_key = st.text_input(
-            "Entrez votre clé API",
-            type="password",
-            help="Obtenez votre clé sur console.mistral.ai"
-        )
-        if api_key:
-            st.success("✅ Clé API configurée manuellement")
-
+        # Auto-use secret from Streamlit Cloud
+        if "MISTRAL_API_KEY" in st.secrets:
+            api_key = st.secrets["MISTRAL_API_KEY"]
+            st.success("✅ Clé API configurée automatiquement")
+        else:
+            # Fallback for local development
+            api_key = st.text_input(
+                "Entrez votre clé API",
+                type="password",
+                help="Obtenez votre clé sur console.mistral.ai"
+            )
+            if api_key:
+                st.success("✅ Clé API configurée manuellement")
     
     st.divider()
     
